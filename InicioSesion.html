@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/InicioSesion.css">
+</head>
+<body>
+    <img src="img/Fashion.jpg" alt="Fondo" class="Moda"> 
+    <div class="login-container">
+        <h1>Iniciar Sesión</h1>
+        <form id="login-form" action="#" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required> 
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required> 
+            
+            <button type="button" id="login-button">Entrar</button> 
+        </form>
+        <p>¿No tienes una cuenta? <a href="index.html">Regístrate aquí</a></p> 
+    </div>
+
+    <script>
+        let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || []; // Obtener usuarios registrados del almacenamiento local
+        document.getElementById("login-button").addEventListener("click", function() {
+            const email = document.getElementById("email").value; // Obtener el valor del campo email
+            const password = document.getElementById("password").value; // Obtener el valor del campo contraseña
+
+            // Buscar el usuario en la lista de usuarios registrados
+            const usuario = usuariosRegistrados.find(user => user.email === email && user.password === password);
+
+            // Si el usuario existe, redirigir a la página de inicio
+            if (usuario) {
+                window.location.href = "Inicio.html";
+            } else {
+                alert("El email o la contraseña son incorrectos. Por favor, regístrate primero."); // Mostrar alerta si las credenciales son incorrectas
+            }
+        });
+    </script>
+</body>
+</html>

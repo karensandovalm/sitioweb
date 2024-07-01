@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="/css/Style.css">
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); 
+            
+            // Mostrar un mensaje de alerta al usuario
+            alert("Muchas gracias por elegirnos. Pronto nos contactaremos con usted.");
+
+            // Limpia el formulario después de mostrar el mensaje
+            event.target.reset(); // Esto limpia el formulario
+        }
+    </script>
+</head>
+<body>
+    <div class="fondo-col">
+        <div class="cont">
+            <header class="header">
+                <a href="Inicio.html">
+                    <img src="img/Logo.png" alt="logo" class="Logo">
+                </a>
+            </header>
+            <nav>
+                <a href="Inicio.html">Tienda</a>
+                <a class="activo" href="Contacto.html">Contacto</a>
+                <a href="Carrito.html">Carrito</a>
+            </nav>
+            <main class="Contenedor">
+                <h1 class="Tendencia"> Formulario de Contacto </h1>
+                <form class="formulario" onsubmit="enviarFormulario(event)">
+                    <fieldset>
+                        <legend>Llene el formulario para contactarnos</legend>
+                        <div class="CampoFor">
+                            <div class="campo">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre">
+                            </div>
+                            <div class="campo">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Escriba su Email">
+                            </div>
+                            <div class="campo">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="Escriba su Teléfono">
+                            </div>
+                            <div class="campo">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="envia">
+                        <input type="submit" class="boton" value="Enviar">
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Moda Fashion</p>
+    </footer>
+</body>
+</html>

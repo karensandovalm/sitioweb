@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/css/Style.css">
+</head>
+<body>
+    <div class="fondo-col">
+        <div class="cont">
+            <header class="header">
+                <a href="Inicio.html">
+                    <img src="img/Logo.png" alt="logo" class="Logo">
+                </a>
+                <button class="cerrar-sesion-btn" id="cerrar-sesion">Cerrar Sesión</button>
+            </header>
+            <nav>
+                <a class="activo" href="Inicio.html">Tienda</a>
+                <a href="Contacto.html">Contacto</a>
+                <a href="Carrito.html">Carrito</a>
+            </nav>
+            <main class="Contenedor">
+                <h1 class="Articulos"> Nuestros productos</h1>
+                <div class="Productos">
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Vestido Casual.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Vestido Casual</p>
+                            <p class="Precio">$50.000</p>
+                            <button onclick="agregarAlCarrito('Vestido Casual', 50000, '/img/Vestido Casual.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Vestido Corto.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Vestido Corto</p>
+                            <p class="Precio">$35.000</p>
+                            <button onclick="agregarAlCarrito('Vestido Corto', 35000, '/img/Vestido Corto.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Vestido Playero.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Vestido Playero</p>
+                            <p class="Precio">$40.000</p>
+                            <button onclick="agregarAlCarrito('Vestido Playero', 40000, '/img/Vestido Playero.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Vestido Gala.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Vestido Gala</p>
+                            <p class="Precio">$70.000</p>
+                            <button onclick="agregarAlCarrito('Vestido Gala', 70000, '/img/Vestido Gala.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Bolso Blanco.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Bolso Blanco</p>
+                            <p class="Precio">$45.000</p>
+                            <button onclick="agregarAlCarrito('Bolso Blanco', 45000, '/img/Bolso Blanco.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Bolso Elegante.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Bolso Elegante</p>
+                            <p class="Precio">$50.000</p>
+                            <button onclick="agregarAlCarrito('Bolso Elegante', 50000, '/img/Bolso Elegante.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Bolso Rosa.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Bolso Rosa</p>
+                            <p class="Precio">$50.000</p>
+                            <button onclick="agregarAlCarrito('Bolso Rosa', 50000, '/img/Bolso Rosa.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Bolso Verde.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Bolso Verde</p>
+                            <p class="Precio">$45.000</p>
+                            <button onclick="agregarAlCarrito('Bolso Verde', 45000, '/img/Bolso Verde.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Blusa Azul.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Blusa Azul</p>
+                            <p class="Precio">$25.000</p>
+                            <button onclick="agregarAlCarrito('Blusa Azul', 25000, '/img/Blusa Azul.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Blusa Blanca.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Blusa Blanca</p>
+                            <p class="Precio">$35.000</p>
+                            <button onclick="agregarAlCarrito('Blusa Blanca', 35000, '/img/Blusa Blanca.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Blusa Basica.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Blusa Basica</p>
+                            <p class="Precio">$30.000</p>
+                            <button onclick="agregarAlCarrito('Blusa Basica', 30000, '/img/Blusa Basica.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Blusa Negra.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Blusa Negra</p>
+                            <p class="Precio">$40.000</p>
+                            <button onclick="agregarAlCarrito('Blusa Negra', 40000, '/img/Blusa Negra.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Conjunto Azul.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Conjunto Azul</p>
+                            <p class="Precio">$60.000</p>
+                            <button onclick="agregarAlCarrito('Conjunto Azul', 60000, '/img/Conjunto Azul.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Conjunto BN.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Conjunto blanco y negro</p>
+                            <p class="Precio">$55.000</p>
+                            <button onclick="agregarAlCarrito('Conjunto blanco y negro', 55000, '/img/Conjunto BN.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Conjunto Negro.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Conjunto Negro</p>
+                            <p class="Precio">$65.000</p>
+                            <button onclick="agregarAlCarrito('Conjunto Negro', 65000, '/img/Conjunto Negro.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Conjunto Rosa.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Conjunto Rosa</p>
+                            <p class="Precio">$50.000</p>
+                            <button onclick="agregarAlCarrito('Conjunto Rosa', 50000, '/img/Conjunto Rosa.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Pantalon Blanco.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Pantalon Blanco</p>
+                            <p class="Precio">$45.000</p>
+                            <button onclick="agregarAlCarrito('Pantalon Blanco', 45000, '/img/Pantalon Blanco.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Pantalon Negro.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Pantalon Negro</p>
+                            <p class="Precio">$52.000</p>
+                            <button onclick="agregarAlCarrito('Pantalon Negro', 52000, '/img/Pantalon Negro.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Pantalon Rosa.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Pantalon Rosa</p>
+                            <p class="Precio">$63.000</p>
+                            <button onclick="agregarAlCarrito('Pantalon Rosa', 63000, '/img/Pantalon Rosa.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="Producto">
+                        <div class="Prendas">
+                            <img src="/img/Pantalon Lila.jpg" alt="Art">
+                        </div>
+                        <div class="Informacion">
+                            <p class="Nombre">Pantalon Lila</p>
+                            <p class="Precio">$58.000</p>
+                            <button onclick="agregarAlCarrito('Pantalon Lila', 58000, '/img/Pantalon Lila.jpg')" class="comprar-btn">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Moda Fashion</p>
+    </footer>
+
+    <script>
+        // Función para cerrar sesión
+        function cerrarSesion() {
+            alert('¡Ha cerrado sesión exitosamente!');
+            window.location.href = "InicioSesion.html";
+        }
+
+        document.getElementById('cerrar-sesion').addEventListener('click', function(event) {
+            event.preventDefault();
+            cerrarSesion(); // Llamar a la función de cerrar sesión al hacer clic
+        });
+
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(nombre, precio, imagen) {
+            // Obtener los productos existentes en el carrito
+            let productosCarrito = localStorage.getItem('productosCarrito') || '';
+
+            // Agregar el nuevo producto 
+            productosCarrito += `${nombre}|${precio}|${imagen};`;
+
+            // Guardar la lista actualizada en el localStorage
+            localStorage.setItem('productosCarrito', productosCarrito);
+
+            // Redireccionar a la página de carrito
+            window.location.href = "Carrito.html";
+        }
+    </script>
+</body>
+</html>

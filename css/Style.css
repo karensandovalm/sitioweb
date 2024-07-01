@@ -1,0 +1,365 @@
+/* Estilos generales */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Estilos específicos */
+.fondo-col {
+    background-color: pink;
+    min-height: 100vh; /* Asegura que el fondo se extienda al menos por toda la altura de la pantalla */
+    padding-bottom: 6rem; /* Añade espacio al final para el pie de página */
+}
+
+.cont {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem; /* Añade un poco de espacio a los lados */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem; /* Mueve el encabezado hacia abajo */
+}
+
+/* Estilos adicionales para el botón de cerrar sesión */
+.cerrar-sesion-btn {
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cerrar-sesion-btn:hover {
+    background-color: #cc0000;
+}
+
+.Logo {
+    max-width: 15rem;
+    margin-top: 3rem;
+}
+
+nav {
+    margin-top: 1rem;
+    margin-bottom: 3rem; /* Aumenta el espacio inferior */
+    background-color: palevioletred;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilos para el botón Comprar */
+.comprar-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.comprar-btn:hover {
+    background-color: #0056b3;
+}
+
+nav a:hover {
+    color: purple;
+}
+
+.activo {
+    color: rgb(51, 51, 107);
+}
+
+.Contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.Articulos {
+    color: rgb(212, 38, 96);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 800; /* Corrige la declaración de la fuente */
+}
+
+.Productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ajusta el número de columnas */
+    gap: 2rem; /* Añade espacio entre los productos */
+    padding: 2rem; /* Añade un poco de espacio alrededor de los productos */
+}
+
+.Producto {
+    border-radius: 10px;
+    background-color: rgb(227, 85, 109);
+    padding: 2rem;
+}
+
+.Producto:hover {
+    background-color: rgb(158, 56, 56);
+}
+
+.Producto img {
+    max-width: 100%; /* Asegura que la imagen de la prenda se ajuste dentro de su contenedor */
+    height: auto;
+    display: block; /* Corrige el espacio en blanco debajo de la imagen */
+    margin-bottom: 1rem; /* Añade un poco de espacio debajo de la imagen */
+}
+
+.Producto-Nombre,
+.Producto-Precio {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.Producto .Nombre {
+    color: black;
+    font-size: 3rem; /* Aumenta el tamaño de la letra */
+    font-weight: 800;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.Producto .Precio {
+    color: black;
+    font-size: 2rem; /* Aumenta el tamaño de la letra */
+    font-weight: 500;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.footer {
+    background-color: palevioletred;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 0.5rem;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.Tendencia{
+    text-align: center;
+    font-size: 40px;
+}
+
+.tendencias {
+    display: grid;
+    grid-template-columns: repeat(2,0.3fr);
+}
+
+.descripcion {
+    font-size: 30px; /* Aumenta el tamaño de la letra */
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(106, 101, 103); /* Cambia el color del texto */
+}
+
+.tendencia-img {
+    max-width: 100%; /* Establece un ancho máximo del 100% */
+    height: 300px;
+    border-radius: 5%;
+    margin-bottom: 15px;
+}
+
+/* Contacto */
+
+.formulario {
+    width: min(600px, 100%);
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.campo {
+    margin: 12px;
+}
+
+.campo label {
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input::placeholder, textarea::placeholder {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Contacto */
+
+.formulario {
+    width: min(600px, 100%);
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.campo {
+    margin: 12px;
+}
+
+.campo label {
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input::placeholder, textarea::placeholder {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+legend {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.boton {
+    background-color: plum;
+    margin-top: 10px;
+    font-size: 20px;
+    width: 40%;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos para el listado de productos en el carrito */
+.producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.producto img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.producto-info p {
+    margin: 5px 0;
+}
+.producto-info .nombre {
+    font-weight: bold;
+}
+.producto-info .precio {
+    color: rgb(74, 11, 219);
+}
+.producto-acciones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.producto-acciones button {
+    background-color: #eb3fbd;
+    color: #0b0101;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.producto-acciones button:hover {
+    background-color: #e16e91;
+}
+
+.letra{
+    font-size: 20px;
+}
+.resumen-carrito {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid #d809bd;
+    background-color: #df8989;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.resumen-carrito p {
+    margin: 10px 0;
+}
+.metodos-pago {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.metodo-pago {
+    margin-bottom: 10px;
+}
+.contenedor-total {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.formulario-pago {
+    margin-top: 20px;
+}
+.formulario-pago label {
+    display: block;
+    margin-bottom: 5px;
+}
+.formulario-pago input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.formulario-pago button {
+    background-color: #f316c0;
+    color: #080505;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.formulario-pago button:hover {
+    background-color: #ee6cb5;
+}

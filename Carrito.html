@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="/css/Style.css">
+</head>
+<body>
+    <div class="fondo-col">
+        <div class="cont">
+            <header class="header">
+                <a href="Inicio.html">
+                    <img src="img/Logo.png" alt="logo" class="Logo">
+                </a>
+            </header>
+            <nav>
+                <a href="Inicio.html">Tienda</a>
+                <a href="Contacto.html">Contacto</a>
+                <a class="activo" href="Carrito.html">Carrito</a>
+            </nav>
+            <main class="Contenedor">
+                <h1>Carrito de Compras</h1>
+                <div id="lista-productos">
+                    <!-- Aquí se agregarán dinámicamente los productos del carrito -->
+                </div>
+                <div class="resumen-carrito">
+                    <p class="letra"><strong>Total de productos:</strong> <span id="total-productos">0</span></p>
+                    <p class="letra"><strong>Total a pagar:</strong> $<span id="total-precio">0</span></p>
+                    <div class="metodos-pago">
+                        <h2>Métodos de Pago</h2>
+                        <div class="metodo-pago">
+                            <input type="radio" id="pago-entrega" name="metodo-pago" value="Pago contra entrega">
+                            <label for="pago-entrega">Pago contra entrega</label>
+                        </div>
+                        <div class="metodo-pago">
+                            <input type="radio" id="transferencia-bancaria" name="metodo-pago" value="Transferencia bancaria">
+                            <label for="transferencia-bancaria">Transferencia bancaria</label>
+                        </div>
+                    </div>
+                    <div class="contenedor-total">
+                        <p>Total:</p>
+                        <p>$<span id="total-general">0</span></p>
+                    </div>
+                </div>
+                <div class="formulario-pago" id="formulario-pago" style="display:none;">
+                    <form id="form-pago">
+                        <div id="form-entrega" style="display:none;">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" required>
+                            <label for="telefono">Número de Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                            <label for="nombre">Nombre del Cliente</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div id="form-transferencia" style="display:none;">
+                            <label for="banco">Banco</label>
+                            <input type="text" id="banco" name="banco" required>
+                            <label for="direccion-banco">Dirección</label>
+                            <input type="text" id="direccion-banco" name="direccion-banco" required>
+                            <label for="nombre-titular">Nombre del Titular</label>
+                            <input type="text" id="nombre-titular" name="nombre-titular" required>
+                        </div>
+                        <button type="submit">Realizar Pago</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Moda Fashion</p>
+    </footer>
+
+    <script>
+        // Función para mostrar los productos del carrito desde localStorage
+        function mostrarProductosDelCarrito() {
+            let productosCarrito = localStorage.getItem('productosCarrito') || '';
+            const productos = productosCarrito.split(';').filter(Boolean);
+            const listaProductos = document.getElementById('lista-productos');
+            const totalProductos = document.getElementById('total-productos');
+            const totalPrecio = document.getElementById('total-precio');
+            const totalGeneral = document.getElementById('total-general');
+
+            let totalProductosContador = 0;
+            let totalPrecioSuma = 0;
+
+            listaProductos.innerHTML = ''; // Limpiar la lista de productos antes de mostrar nuevamente
+
+            productos.forEach((productoStr, index) => {
+                const [nombre, precio, imagen] = productoStr.split('|');
+                totalProductosContador++;
+                totalPrecioSuma += parseFloat(precio);
+                mostrarProductoEnCarrito(nombre, precio, imagen, index); // Pasar el índice del producto como parámetro
+            });
+
+            totalProductos.textContent = totalProductosContador;
+            totalPrecio.textContent = totalPrecioSuma.toFixed(2);
+            totalGeneral.textContent = totalPrecioSuma.toFixed(2);
+        }
+
+        // Función para mostrar un producto en el carrito
+        function mostrarProductoEnCarrito(nombre, precio, imagen, index) {
+            const listaProductos = document.getElementById('lista-productos');
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto');
+
+            productoDiv.innerHTML = `
+                <img src="${imagen}" alt="${nombre}">
+                <div class="producto-info">
+                    <p class="nombre">${nombre}</p>
+                    <p class="precio">$${precio}</p>
+                </div>
+                <div class="producto-acciones">
+                    <button onclick="eliminarProducto(${index})">Eliminar</button>
+                </div>`;
+
+            listaProductos.appendChild(productoDiv);
+        }
+
+        // Función para eliminar un producto del carrito
+        function eliminarProducto(index) {
+            let productosCarrito = localStorage.getItem('productosCarrito') || '';
+            let productos = productosCarrito.split(';').filter(Boolean);
+
+            if (index >= 0 && index < productos.length) {
+                productos.splice(index, 1); // Eliminar el producto del array
+
+                // Actualizar el localStorage
+                localStorage.setItem('productosCarrito', productos.join(';'));
+
+                // Mostrar nuevamente los productos
+                mostrarProductosDelCarrito();
+            }
+        }
+
+        // Función para mostrar el formulario correspondiente según el método de pago seleccionado
+        function mostrarFormularioPago() {
+            const formularioPago = document.getElementById('formulario-pago');
+            const formEntrega = document.getElementById('form-entrega');
+            const formTransferencia = document.getElementById('form-transferencia');
+            const metodoPago = document.querySelector('input[name="metodo-pago"]:checked');
+
+            formularioPago.style.display = 'block';
+
+            if (metodoPago && metodoPago.value === 'Pago contra entrega') {
+                formEntrega.style.display = 'block';
+                formTransferencia.style.display = 'none';
+            } else if (metodoPago && metodoPago.value === 'Transferencia bancaria') {
+                formEntrega.style.display = 'none';
+                formTransferencia.style.display = 'block';
+            }
+        }
+
+        // Función para manejar el envío del formulario de pago
+        function manejarPago(event) {
+            event.preventDefault();
+            const metodoPago = document.querySelector('input[name="metodo-pago"]:checked');
+
+            if (metodoPago && metodoPago.value === 'Pago contra entrega') {
+                const direccion = document.getElementById('direccion').value;
+                const telefono = document.getElementById('telefono').value;
+                const nombre = document.getElementById('nombre').value;
+                alert(`Gracias ${nombre}, tu pedido será enviado a ${direccion}. Te contactaremos al ${telefono} para confirmar la entrega.`);
+            } else if (metodoPago && metodoPago.value === 'Transferencia bancaria') {
+                const banco = document.getElementById('banco').value;
+                const direccionBanco = document.getElementById('direccion-banco').value;
+                const nombreTitular = document.getElementById('nombre-titular').value;
+                alert(`Gracias ${nombreTitular}, por elegirnos. Transfiere el monto a la cuenta del banco ${banco} ubicado en ${direccionBanco}.`);
+            }
+            alert("Gracias por su compra, su producto llegará en 5 días.");
+        }
+
+        // Llamar a la función para obtener y mostrar los productos cuando se cargue la página
+        window.addEventListener('load', mostrarProductosDelCarrito);
+
+        // Escuchar cambios en la selección del método de pago
+        document.querySelectorAll('input[name="metodo-pago"]').forEach(input => {
+            input.addEventListener('change', mostrarFormularioPago);
+        });
+
+        // Manejar el envío del formulario de pago
+        document.getElementById('form-pago').addEventListener('submit', manejarPago);
+    </script>
+</body>
+</html>

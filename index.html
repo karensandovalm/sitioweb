@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/css/Index.css"> 
+</head>
+<body>
+    <img src="img/Fashion.jpg" alt="Fondo" class="img"> 
+    <div class="form-container">
+        <h1>Registrarse</h1>
+        <form id="register-form" action="#" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required> 
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required> 
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required> 
+            
+            <button type="button" id="register-button">Registrarse</button> 
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="InicioSesion.html">Inicia sesión aquí</a></p> 
+    </div>
+
+    <script>
+        let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || []; // Obtener usuarios registrados del almacenamiento local
+        document.getElementById("register-button").addEventListener("click", function() {
+            const name = document.getElementById("name").value; 
+            const email = document.getElementById("email").value; 
+            const password = document.getElementById("password").value;
+
+            // Verificar si ya existe un usuario con el mismo email
+            const existeUsuario = usuariosRegistrados.some(user => user.email === email);
+
+            // Si el usuario ya existe, mostrar un mensaje de alerta
+            if (existeUsuario) {
+                alert("Ya existe una cuenta registrada con este correo electrónico. Por favor, inicia sesión.");
+            } else {
+                // Si el usuario no existe, crear un nuevo objeto de usuario y agregarlo a la lista de usuarios registrados
+                const nuevoUsuario = { name, email, password };
+                usuariosRegistrados.push(nuevoUsuario);
+                localStorage.setItem('usuariosRegistrados', JSON.stringify(usuariosRegistrados)); // Actualizar la lista en el almacenamiento local
+                alert("¡Usted se ha registrado correctamente!"); 
+                window.location.href = "InicioSesion.html"; 
+            }
+        });
+    </script>
+</body>
+</html>
